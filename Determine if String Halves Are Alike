@@ -1,0 +1,20 @@
+var halvesAreAlike = function(s) {
+    let acount=0
+    let bcount=0
+    let mid=s.length/2
+    for(let i=0;i<s.length;i++){
+        let flag=false
+        if(s[i].search(/a|e|i|o|u/i)!==-1){
+            flag=true
+        }
+        if(i<mid &&flag){
+            acount=acount+1
+        }else if(flag){
+            bcount=bcount+1
+        }
+    }
+    if(acount==bcount){
+        return true
+    }
+    return false
+};
